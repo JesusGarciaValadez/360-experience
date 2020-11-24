@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery VR</title>
+    <meta name="viewport" content="width=device-width; viewport-scale=1">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="a1" src="./assets/27989402829_7008d8702f_k.jpg" />
+            <img id="a2" src="./assets/38556796125_b1c7be2f87_k.jpg" />
+            <img id="a3" src="./assets/40689223424_370c101645_k.jpg" />
+        </a-assets>
+
+        <a-image src="#a1" position="-1.5 1.8 -3" onclick="show('a1')"></a-image>
+        <a-image src="#a2" position="0 1.8 -3" onclick="show('a2')"></a-image>
+        <a-image src="#a3" position="1.5 1.8 -3" onclick="show('a3')"></a-image>
+
+        <a-sky src="#a1" id="sky"></a-sky>
+
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-scene>
+
+    <script>
+        const show = id => {
+            document.getElementById('sky').setAttribute('src', `#${id}`)
+        }
+    </script>
+</body>
+</html>
